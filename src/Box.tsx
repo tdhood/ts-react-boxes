@@ -15,10 +15,15 @@ interface BoxInterface {
   width: number;
   height: number;
   backgroundColor: string;
-  remove(id:string): void;
+  remove(id: string): void;
 }
 
-function Box({ id, width = 5, height = 5, backgroundColor, remove }: BoxInterface) {
+function Box({ 
+  id, 
+  width = 5, 
+  height = 5, 
+  backgroundColor, 
+  remove }: BoxInterface) : JSX.Element {
 
   /** Remove a box. */
   function handleRemove() : void {

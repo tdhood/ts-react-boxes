@@ -15,17 +15,17 @@ import NewBoxForm from "./NewBoxForm";
   backgroundColor: string;
 }
 
-function BoxList() {
+function BoxList() : JSX.Element {
   const [boxes, setBoxes] = useState<BoxInterface[]>([])
 
   /** add box with given { id, width, height, backgroundColor } */
   function add(newBox: BoxInterface) : void {
-    setBoxes(boxes => [...boxes, newBox]);
+    setBoxes(boxes => [...boxes, newBox] as BoxInterface[]);
   }
 
   /** remove box matching that id. */
   function remove(id: string) : void {
-    setBoxes(boxes => boxes.filter(box => box.id !== id));
+    setBoxes(boxes => boxes.filter(box => box.id !== id) as BoxInterface[] );
   }
 
   return (

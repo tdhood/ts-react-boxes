@@ -12,9 +12,6 @@ import { v4 as uuid } from 'uuid';
  * BoxList -> NewBoxForm
  */
 
-interface NewBoxFormPropsInterface {
-  createBox({ id, width, height, backgroundColor }: BoxInterface): void
-}
 
 interface BoxInterface {
   id: string;
@@ -23,7 +20,11 @@ interface BoxInterface {
   backgroundColor: string;
 }
 
-function NewBoxForm({ createBox }: NewBoxFormPropsInterface) {
+interface NewBoxFormPropsInterface {
+  createBox({ id, width, height, backgroundColor }: BoxInterface): void
+}
+
+function NewBoxForm({ createBox }: NewBoxFormPropsInterface) : JSX.Element {
   const [formData, setFormData] = useState<{
     height: number | "",
     width: number | "",
